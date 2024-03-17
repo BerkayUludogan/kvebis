@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
+      title: 'Kreş Veli Bilgilendirme',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
