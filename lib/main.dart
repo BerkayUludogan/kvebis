@@ -8,12 +8,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Kreş Veli Bilgilendirme',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Material App Bar'),
-          centerTitle: true,
         ),
         body: const Center(
           child: Text('Hello World'),
