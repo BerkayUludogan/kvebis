@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:kvebis_app/core/constants/string_constant.dart';
 
 class PasswordInput extends StatelessWidget {
-  PasswordInput({
+  const PasswordInput({
     required this.controller,
     required this.text,
     required this.onPressed,
-    this.obscureText = false,
     this.isVisible = false,
     super.key,
   });
-  TextEditingController controller;
-  VoidCallback onPressed;
-  String text;
-  bool obscureText;
-  bool isVisible;
+  final TextEditingController controller;
+  final VoidCallback onPressed;
+  final String text;
+  final bool isVisible;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      validator: (value) => value!.isNotEmpty ? null : 'This field required',
-      obscureText: obscureText,
+      validator: (value) =>
+          value!.isNotEmpty ? null : StringConstants.enterYourPassword,
+      obscureText: isVisible,
       decoration: InputDecoration(
         labelText: text,
         icon: const Icon(Icons.lock),
@@ -27,7 +27,7 @@ class PasswordInput extends StatelessWidget {
           padding: EdgeInsets.zero,
           onPressed: onPressed,
           icon: Icon(
-            isVisible ? Icons.visibility_off : Icons.visibility,
+            isVisible ? Icons.visibility : Icons.visibility_off,
           ),
         ),
       ),

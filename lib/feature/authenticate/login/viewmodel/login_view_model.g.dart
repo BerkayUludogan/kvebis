@@ -26,18 +26,18 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   }
 
   late final _$isLockOpenAtom =
-      Atom(name: '_LoginViewModelBase.isLockOpen', context: context);
+      Atom(name: '_LoginViewModelBase.isVisible', context: context);
 
   @override
-  bool get isLockOpen {
+  bool get isVisible {
     _$isLockOpenAtom.reportRead();
-    return super.isLockOpen;
+    return super.isVisible;
   }
 
   @override
-  set isLockOpen(bool value) {
-    _$isLockOpenAtom.reportWrite(value, super.isLockOpen, () {
-      super.isLockOpen = value;
+  set isVisible(bool value) {
+    _$isLockOpenAtom.reportWrite(value, super.isVisible, () {
+      super.isVisible = value;
     });
   }
 
@@ -68,7 +68,7 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
     final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
         name: '_LoginViewModelBase.isLockStateChange');
     try {
-      return super.isLockStateChange();
+      return super.isVisibleStateChange();
     } finally {
       _$_LoginViewModelBaseActionController.endAction(_$actionInfo);
     }
@@ -77,8 +77,8 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   @override
   String toString() {
     return '''
-isLoading: ${isLoading},
-isLockOpen: ${isLockOpen}
+isVisible: ${isVisible},
+isVisibleOpen: ${isVisible}
     ''';
   }
 }
