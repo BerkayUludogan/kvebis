@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kvebis_app/feature/authenticate/login/view/login_view.dart';
 
 void main() => runApp(const MyApp());
 
@@ -10,12 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Merhaba Hoşgeldiniz'),
-        ),
+        body: LoginView(),
       ),
     );
   }
