@@ -88,7 +88,8 @@ class LoginView extends StatelessWidget {
         return PasswordInput(
           controller: loginViewModel.passwordController,
           text: StringConstants.password,
-          onPressed: loginViewModel.isLockStateChange,
+          onPressed: loginViewModel.isVisibleStateChange,
+          isVisible: loginViewModel.isVisible,
         );
       },
     );

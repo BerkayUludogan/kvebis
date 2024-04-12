@@ -24,6 +24,7 @@ linter:
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     public_member_api_docs: false
     lines_longer_than_80_chars: false
+    library_private_types_in_public_api: false
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
