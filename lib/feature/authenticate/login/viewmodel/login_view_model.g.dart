@@ -55,7 +55,8 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   @override
   void isLoadingChange() {
     final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
-        name: '_LoginViewModelBase.isLoadingChange');
+      name: '_LoginViewModelBase.isLoadingChange',
+    );
     try {
       return super.isLoadingChange();
     } finally {
@@ -64,9 +65,10 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   }
 
   @override
-  void isLockStateChange() {
+  void isVisibleStateChange() {
     final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
-        name: '_LoginViewModelBase.isLockStateChange');
+      name: '_LoginViewModelBase.isLockStateChange',
+    );
     try {
       return super.isVisibleStateChange();
     } finally {

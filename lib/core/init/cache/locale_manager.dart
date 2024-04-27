@@ -1,6 +1,5 @@
+import 'package:kvebis_app/core/constants/enums/locale_keys_enum.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../constants/enums/locale_keys_enum.dart';
 
 class LocaleManager {
   LocaleManager._init() {
@@ -12,7 +11,7 @@ class LocaleManager {
 
   SharedPreferences? _preferences;
   static LocaleManager get instance => _instance;
-  static Future prefrencesInit() async {
+  static Future<dynamic> prefrencesInit() async {
     instance._preferences ??= await SharedPreferences.getInstance();
   }
 

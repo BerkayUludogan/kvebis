@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "744250013056",
+    "project_id": "kvebis",
+    "storage_bucket": "kvebis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744250013056:android:6345778f8ee69ce9bebd65",
+        "android_client_info": {
+          "package_name": "com.example.kvebis_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrn9natxiHaCzU9EzMf09Ur_dZilr_2OA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,5 @@
 import 'package:kvebis_app/core/constants/app/application_constants.dart';
-import 'package:kvebis_app/core/constants/string_constant.dart';
+import 'package:kvebis_app/core/constants/app/string_constant.dart';
 
 extension StringLocalization on String {
   String? get isValidEmail => contains(RegExp(ApplicationConstants.emailRegiex))

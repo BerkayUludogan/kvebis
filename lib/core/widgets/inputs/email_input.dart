@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kvebis_app/core/constants/string_constant.dart';
+import 'package:kvebis_app/core/constants/app/color_constants.dart';
+import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/extension/string_extension.dart';
 
 class EmailInput extends StatelessWidget {
@@ -14,9 +15,10 @@ class EmailInput extends StatelessWidget {
           value!.isValidEmails ? null : StringConstants.checkYourEmail,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-          labelText: text,
-          labelStyle: const TextStyle(color: Colors.black),
-          icon: const Icon(Icons.email)),
+        labelText: text,
+        labelStyle: TextStyle(color: ColorConstants.blackColor),
+        icon: const Icon(Icons.email),
+      ),
     );
   }
 }

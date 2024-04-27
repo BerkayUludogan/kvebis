@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kvebis_app/core/constants/string_constant.dart';
+import 'package:kvebis_app/core/constants/app/string_constant.dart';
 
 class PasswordInput extends StatelessWidget {
   const PasswordInput({

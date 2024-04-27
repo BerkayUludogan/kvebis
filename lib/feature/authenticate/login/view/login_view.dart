@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kvebis_app/core/base/view/base_widget.dart';
 import 'package:kvebis_app/core/constants/image/image_path.dart';
-import 'package:kvebis_app/core/constants/string_constant.dart';
+import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/extension/context_extension.dart';
 import 'package:kvebis_app/core/widgets/button/base_button.dart';
 import 'package:kvebis_app/core/widgets/inputs/email_input.dart';
@@ -70,7 +70,7 @@ class LoginView extends StatelessWidget {
             height: context.normalValue,
           ),
           buildTextFormFieldPassword(context),
-          buildWrapForgot(),
+          buildForgot(),
           SizedBox(
             height: context.mediumValue,
           ),
@@ -95,7 +95,7 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  Widget buildWrapForgot() {
+  Row buildForgot() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [

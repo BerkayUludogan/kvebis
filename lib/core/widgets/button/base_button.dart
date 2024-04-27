@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/extension/context_extension.dart';
 
 class BaseButton extends StatelessWidget {
@@ -8,13 +9,14 @@ class BaseButton extends StatelessWidget {
   ElevatedButton build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFFF43D53),
+        backgroundColor: ColorConstants.buttonColor,
       ),
       onPressed: () {},
       child: Center(
         child: Text(
           name,
-          style: context.textTheme.bodyLarge!.copyWith(color: Colors.white),
+          style: context.textTheme.bodyLarge!
+              .copyWith(color: ColorConstants.whiteColor),
         ),
       ),
     );
