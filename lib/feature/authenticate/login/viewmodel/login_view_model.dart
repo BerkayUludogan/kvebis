@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/base/model/base_view_model.dart';
 import 'package:kvebis_app/feature/authenticate/login/model/login_model.dart';
@@ -52,5 +53,11 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
       }
     }
     isLoadingChange();
+  }
+
+  Future<void> login() async {
+    final auth = FirebaseAuth.instance;
+    await auth.signInWithEmailAndPassword(
+        email: emailController.text, password: passwordController.text);
   }
 }
