@@ -58,6 +58,8 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   Future<void> login() async {
     final auth = FirebaseAuth.instance;
     await auth.signInWithEmailAndPassword(
-        email: emailController.text, password: passwordController.text);
+      email: emailController.text,
+      password: passwordController.text,
+    );
   }
 }
