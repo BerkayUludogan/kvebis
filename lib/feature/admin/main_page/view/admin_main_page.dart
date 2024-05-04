@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/constants/image/image_path.dart';
