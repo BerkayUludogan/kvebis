@@ -23,6 +23,7 @@ dependencies:
 
   # ui kits
   cupertino_icons: ^1.0.6
+  google_fonts: ^6.2.1
 
   # state management
   flutter_mobx: ^2.2.0+1

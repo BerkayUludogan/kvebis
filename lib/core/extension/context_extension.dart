@@ -27,6 +27,7 @@ extension PaddingExtensionAll on BuildContext {
   EdgeInsets get paddingNormal => EdgeInsets.all(normalValue);
   EdgeInsets get paddingMedium => EdgeInsets.all(mediumValue);
   EdgeInsets get paddingHigh => EdgeInsets.all(highValue);
+  EdgeInsets get splashHigh => EdgeInsets.all(height * .25);
 }
 
 extension PaddingExtensionSymetric on BuildContext {

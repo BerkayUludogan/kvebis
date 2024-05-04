@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 enum ImagePaths {
-  login('login');
+  login('login'),
+  splash('splashLogo'),
+  ;
 
   const ImagePaths(this.value);
   final String value;

@@ -27,6 +27,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: LoginView(),
       );
     },
+    AdminMainRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: AdminMainView(),
+      );
+    },
   };
 }
 
@@ -45,7 +51,7 @@ class SplashRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SplashView]
+/// [LoginView]
 class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute({List<PageRouteInfo>? children})
       : super(
@@ -54,6 +60,20 @@ class LoginRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'LoginRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [AdminView]
+class AdminMainRoute extends PageRouteInfo<void> {
+  const AdminMainRoute({List<PageRouteInfo>? children})
+      : super(
+          AdminMainRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AdminMainRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

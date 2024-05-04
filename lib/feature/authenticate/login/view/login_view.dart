@@ -1,8 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kvebis_app/core/base/view/base_widget.dart';
-import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/constants/image/image_path.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/extension/context_extension.dart';
@@ -33,6 +31,9 @@ class LoginView extends StatelessWidget {
                 child: Column(
                   children: [
                     buildAnimatedContainer(context),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     Expanded(
                       child: Padding(
                         padding: context.paddingNormal,
@@ -78,13 +79,8 @@ class LoginView extends StatelessWidget {
           ),
           BaseButton(
             onPressed: () {
-              if (loginViewModel.emailController.text.isNotEmpty &&
-                  loginViewModel.passwordController.text.isNotEmpty) {
-                loginViewModel.login();
-                debugPrint('Giriş Başarılı...!!!!');
-              } else {
-                debugPrint('LOG : Email is empty or password is invalid !!');
-              }
+              // loginViewModel.login();
+              loginViewModel.loginFirestore();
             },
             name: StringConstants.login,
           ),

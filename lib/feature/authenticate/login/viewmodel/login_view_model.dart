@@ -1,8 +1,13 @@
+import 'dart:async';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/base/model/base_view_model.dart';
 import 'package:kvebis_app/feature/authenticate/login/model/login_model.dart';
 import 'package:kvebis_app/feature/authenticate/login/service/login_service_interface.dart';
+import 'package:kvebis_app/main.dart';
+import 'package:kvebis_app/product/navigator/app_router.dart';
 import 'package:mobx/mobx.dart';
 
 part 'login_view_model.g.dart';
@@ -25,7 +30,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   @observable
   bool isLoading = false;
   @observable
-  bool isVisible = false;
+  bool isVisible = true;
 
   @action
   void isLoadingChange() => isLoading = !isLoading;
@@ -57,9 +62,34 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
 
   Future<void> login() async {
     final auth = FirebaseAuth.instance;
-    await auth.signInWithEmailAndPassword(
-      email: emailController.text,
-      password: passwordController.text,
-    );
+    try {
+      await auth.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      debugPrint('Auth exception ${e.toString()}');
+    }
+
+    unawaited(getIt<AppRouter>().replace(const AdminMainRoute()));
+    getIt<AppRouter>().popUntilRoot();
+  }
+
+  Future<void> loginFirestore() async {
+    final QuerySnapshot querySnapshot =
+        await FirebaseFirestore.instance.collection('users').get();
+
+    final documents = querySnapshot.docs;
+    for (final document in documents) {
+      final data = document.data() as Map<String, dynamic>?;
+      if (data != null) {
+        if (emailController.text == data['mail'] &&
+            passwordController.text == data['password'] &&
+            data['roleID'] == 'bJTMkX2vJyMqtYeB5RJb') {
+          unawaited(getIt<AppRouter>().replace(const AdminMainRoute()));
+          getIt<AppRouter>().popUntilRoot();
+        }
+      }
+    }
   }
 }
