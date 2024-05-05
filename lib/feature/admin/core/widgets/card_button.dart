@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AdminCardButton extends StatelessWidget {
-  AdminCardButton({required this.onTap, required this.text, super.key});
+class CustomCardButton extends StatelessWidget {
+  CustomCardButton({required this.onTap, required this.text, super.key});
   Function() onTap;
   String text;
   @override
