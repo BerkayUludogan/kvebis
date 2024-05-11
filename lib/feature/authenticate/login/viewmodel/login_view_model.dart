@@ -68,10 +68,10 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
         password: passwordController.text,
       );
     } on FirebaseAuthException catch (e) {
-      debugPrint('Auth exception ${e.toString()}');
+      debugPrint('Auth exception $e');
     }
 
-    unawaited(getIt<AppRouter>().replace(const AdminMainRoute()));
+  unawaited(getIt<AppRouter>().replace(const AdminMainRoute()));
     getIt<AppRouter>().popUntilRoot();
   }
 
@@ -86,7 +86,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
         if (emailController.text == data['mail'] &&
             passwordController.text == data['password'] &&
             data['roleID'] == 'bJTMkX2vJyMqtYeB5RJb') {
-          unawaited(getIt<AppRouter>().replace(const AdminMainRoute()));
+           unawaited(getIt<AppRouter>().replace(const AdminMainRoute()));
           getIt<AppRouter>().popUntilRoot();
         }
       }

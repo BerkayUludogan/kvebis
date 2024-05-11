@@ -15,10 +15,28 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+       SplashRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const NurseryAdminCreateClassView(),
+      );
+    },
     SplashRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SplashView(),
+        child: const NurseryAdminView(),
+      );
+    }, 
+    SplashRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const NurseryAdminAddStudentView(),
+      );
+    },
+       SplashRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const NurseryAdminAddParentView(),
       );
     },
     LoginRoute.name: (routeData) {
@@ -33,6 +51,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: AdminMainView(),
       );
     },
+    
   };
 }
 
@@ -49,7 +68,6 @@ class SplashRoute extends PageRouteInfo<void> {
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
-
 /// generated route for
 /// [LoginView]
 class LoginRoute extends PageRouteInfo<void> {
