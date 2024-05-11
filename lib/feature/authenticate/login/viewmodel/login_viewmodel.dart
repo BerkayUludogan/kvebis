@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/base/model/base_view_model.dart';
+import 'package:kvebis_app/feature/authenticate/login/firebase/login.dart';
+import 'package:kvebis_app/feature/authenticate/login/firebase/role.dart';
 import 'package:kvebis_app/feature/authenticate/login/model/login_model.dart';
-import 'package:kvebis_app/feature/authenticate/login/model/role.dart';
 import 'package:kvebis_app/feature/authenticate/login/service/login_service_interface.dart';
-import 'package:kvebis_app/feature/authenticate/login/viewmodel/login.dart';
 import 'package:kvebis_app/main.dart';
 import 'package:kvebis_app/product/firebase/firebase_collections.dart';
 import 'package:kvebis_app/product/navigator/app_router.dart';
@@ -24,15 +24,23 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
 
   @override
-  BuildContext setContext(BuildContext context) => baseContext = context;
+  void setContext(BuildContext context) => viewModelContext = context;
 
   @override
-  void init() {}
+  void init() {
+    print('merhaba');
+  }
 
   @observable
   bool isLoading = false;
+
   @observable
   bool isVisible = true;
+
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+  }
 
   @action
   void isLoadingChange() => isLoading = !isLoading;

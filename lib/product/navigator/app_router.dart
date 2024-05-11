@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:kvebis_app/feature/admin/add_nursery/view/add_nursery_view.dart';
 import 'package:kvebis_app/feature/admin/main_page/view/admin_main_page.dart';
 import 'package:kvebis_app/feature/authenticate/login/view/login_view.dart';
 import 'package:kvebis_app/feature/splash/splash_view.dart';
@@ -32,6 +33,12 @@ class AppRouter extends _$AppRouter {
         CustomRoute(
           page: TeacherMainRoute.page,
           path: '/teacherMainView',
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 400,
+        ),
+        CustomRoute(
+          page: AddNurseryRoute.page,
+          path: '/addNurseryView',
           transitionsBuilder: TransitionsBuilders.fadeIn,
           durationInMilliseconds: 400,
         ),

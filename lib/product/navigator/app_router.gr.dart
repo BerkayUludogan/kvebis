@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AddNurseryRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AddNurseryView(),
+      );
+    },
     AdminMainRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -42,6 +48,20 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [AddNurseryView]
+class AddNurseryRoute extends PageRouteInfo<void> {
+  const AddNurseryRoute({List<PageRouteInfo>? children})
+      : super(
+          AddNurseryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AddNurseryRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

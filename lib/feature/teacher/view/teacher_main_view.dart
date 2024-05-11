@@ -4,7 +4,7 @@ import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/constants/image/image_path.dart';
 import 'package:kvebis_app/core/widgets/container/appbar.dart';
-import 'package:kvebis_app/core/widgets/sizedBox.dart';
+import 'package:kvebis_app/core/widgets/sized_box.dart';
 import 'package:kvebis_app/feature/admin/core/widgets/card_button.dart';
 
 @RoutePage()

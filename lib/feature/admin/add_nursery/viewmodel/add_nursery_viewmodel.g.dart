@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_viewmodel.dart';
+part of 'add_nursery_viewmodel.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,9 +8,9 @@ part of 'login_viewmodel.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
-mixin _$LoginViewModel on _LoginViewModelBase, Store {
+mixin _$AddNurseryViewModel on _AddNurseryViewModelBase, Store {
   late final _$isLoadingAtom =
-      Atom(name: '_LoginViewModelBase.isLoading', context: context);
+      Atom(name: '_AddNurseryViewModelBase.isLoading', context: context);
 
   @override
   bool get isLoading {
@@ -26,7 +26,7 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   }
 
   late final _$isVisibleAtom =
-      Atom(name: '_LoginViewModelBase.isVisible', context: context);
+      Atom(name: '_AddNurseryViewModelBase.isVisible', context: context);
 
   @override
   bool get isVisible {
@@ -41,36 +41,28 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
     });
   }
 
-  late final _$fetchLoginServiceAsyncAction =
-      AsyncAction('_LoginViewModelBase.fetchLoginService', context: context);
-
-  @override
-  Future<void> fetchLoginService() {
-    return _$fetchLoginServiceAsyncAction.run(() => super.fetchLoginService());
-  }
-
-  late final _$_LoginViewModelBaseActionController =
-      ActionController(name: '_LoginViewModelBase', context: context);
+  late final _$_AddNurseryViewModelBaseActionController =
+      ActionController(name: '_AddNurseryViewModelBase', context: context);
 
   @override
   void isLoadingChange() {
-    final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
-        name: '_LoginViewModelBase.isLoadingChange');
+    final _$actionInfo = _$_AddNurseryViewModelBaseActionController.startAction(
+        name: '_AddNurseryViewModelBase.isLoadingChange');
     try {
       return super.isLoadingChange();
     } finally {
-      _$_LoginViewModelBaseActionController.endAction(_$actionInfo);
+      _$_AddNurseryViewModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   void isVisibleStateChange() {
-    final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
-        name: '_LoginViewModelBase.isVisibleStateChange');
+    final _$actionInfo = _$_AddNurseryViewModelBaseActionController.startAction(
+        name: '_AddNurseryViewModelBase.isVisibleStateChange');
     try {
       return super.isVisibleStateChange();
     } finally {
-      _$_LoginViewModelBaseActionController.endAction(_$actionInfo);
+      _$_AddNurseryViewModelBaseActionController.endAction(_$actionInfo);
     }
   }
 

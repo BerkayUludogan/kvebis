@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-mixin BaseViewModel {
-  Function? loadingFunction;
-  late BuildContext baseContext;
-  BuildContext setContext(BuildContext context);
+abstract mixin class BaseViewModel {
+  late BuildContext viewModelContext;
+  // Function? loadingFunction;
+  void setContext(BuildContext context);
   void init();
-  void disp() {}
+  // void disp() {}
 }

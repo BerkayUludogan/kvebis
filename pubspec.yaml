@@ -16,18 +16,17 @@ dependencies:
     sdk: flutter
   
   # network
-  dio: ^5.4.0
-  vexana: ^3.5.4
-
-  # storage
-
+  vexana: ^3.5.4 
+  
   # ui kits
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
-
+  
+  
   # state management
-  flutter_mobx: ^2.2.0+1
-  mobx: ^2.3.0+1
+  flutter_mobx: ^2.2.1+1
+  mobx: ^2.3.3+2
+  mobx_codegen: ^2.6.1
 
   # firebase
   firebase_core: ^2.30.1
@@ -41,15 +40,16 @@ dependencies:
   easy_localization: ^3.0.4 
   get_it: ^7.6.0
   equatable: ^2.0.5
+  build_runner: ^2.4.9
+
    
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  auto_route_generator: ^8.0.0
-  build_runner: ^2.4.9 
   flutter_svg: ^2.0.10+1
   very_good_analysis: ^5.1.0  
+  auto_route_generator: ^8.0.0
    
 flutter: 
   uses-material-design: true

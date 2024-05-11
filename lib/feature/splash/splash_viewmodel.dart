@@ -16,7 +16,7 @@ abstract class SplashViewModel extends State<SplashView>
 
   Future<void> init() async {
     Future.delayed(const Duration(seconds: 2), () {
-      unawaited(getIt<AppRouter>().replace(LoginRoute()));
+      unawaited(getIt<AppRouter>().replace(const AddNurseryRoute()));
       getIt<AppRouter>().popUntilRoot();
     });
   }

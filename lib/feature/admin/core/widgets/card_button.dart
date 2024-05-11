@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomCardButton extends StatelessWidget {
-  CustomCardButton({required this.onTap, required this.text, super.key});
-  Function() onTap;
-  String text;
+  const CustomCardButton({required this.onTap, required this.text, super.key});
+  final VoidCallback onTap;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -15,12 +15,12 @@ class CustomCardButton extends StatelessWidget {
         onTap: onTap,
         child: Container(
           width: double.infinity,
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20),
           child: Text(
             text,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 18.0,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
