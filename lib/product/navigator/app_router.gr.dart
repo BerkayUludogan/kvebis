@@ -35,6 +35,30 @@ abstract class _$AppRouter extends RootStackRouter {
         child: LoginView(key: args.key),
       );
     },
+    NurseryAdminAddParentRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const NurseryAdminAddParentView(),
+      );
+    },
+    NurseryAdminAddStudentRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const NurseryAdminAddStudentView(),
+      );
+    },
+    NurseryAdminCreateClassRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const NurseryAdminCreateClassView(),
+      );
+    },
+    NurseryAdminRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const NurseryAdminView(),
+      );
+    },
     SplashRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -104,6 +128,62 @@ class LoginRouteArgs {
   String toString() {
     return 'LoginRouteArgs{key: $key}';
   }
+}
+
+/// generated route for
+/// [NurseryAdminAddParentView]
+class NurseryAdminAddParentRoute extends PageRouteInfo<void> {
+  const NurseryAdminAddParentRoute({List<PageRouteInfo>? children})
+      : super(
+          NurseryAdminAddParentRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NurseryAdminAddParentRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [NurseryAdminAddStudentView]
+class NurseryAdminAddStudentRoute extends PageRouteInfo<void> {
+  const NurseryAdminAddStudentRoute({List<PageRouteInfo>? children})
+      : super(
+          NurseryAdminAddStudentRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NurseryAdminAddStudentRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [NurseryAdminCreateClassView]
+class NurseryAdminCreateClassRoute extends PageRouteInfo<void> {
+  const NurseryAdminCreateClassRoute({List<PageRouteInfo>? children})
+      : super(
+          NurseryAdminCreateClassRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NurseryAdminCreateClassRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [NurseryAdminView]
+class NurseryAdminRoute extends PageRouteInfo<void> {
+  const NurseryAdminRoute({List<PageRouteInfo>? children})
+      : super(
+          NurseryAdminRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NurseryAdminRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

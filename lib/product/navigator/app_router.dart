@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:kvebis_app/feature/admin/add_nursery/view/add_nursery_view.dart';
 import 'package:kvebis_app/feature/admin/main_page/view/admin_main_page.dart';
 import 'package:kvebis_app/feature/authenticate/login/view/login_view.dart';
+import 'package:kvebis_app/feature/nursery_admin/add_parent/view/nursery_admin_addParent_page.dart';
+import 'package:kvebis_app/feature/nursery_admin/add_student/view/nursery_admin_addStudent_page.dart';
+import 'package:kvebis_app/feature/nursery_admin/create_class/view/nursery_admin_createClass_page.dart';
+import 'package:kvebis_app/feature/nursery_admin/main_page/view/nursery_admin_main_page.dart';
 import 'package:kvebis_app/feature/splash/splash_view.dart';
 import 'package:kvebis_app/feature/teacher/view/teacher_main_view.dart';
 
@@ -39,6 +43,18 @@ class AppRouter extends _$AppRouter {
         CustomRoute(
           page: AddNurseryRoute.page,
           path: '/addNurseryView',
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 400,
+        ),
+        CustomRoute(
+          page: NurseryAdminAddParentRoute.page,
+          path: '/nurseryAdminAddParentView',
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 400,
+        ),
+        CustomRoute(
+          page: NurseryAdminCreateClassRoute.page,
+          path: '/nurseryAdminCreateClassView',
           transitionsBuilder: TransitionsBuilders.fadeIn,
           durationInMilliseconds: 400,
         ),

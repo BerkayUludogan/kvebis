@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/widgets/button/base_button.dart';
-import 'package:kvebis_app/core/widgets/inputs/custom_input.dart';
 
 @RoutePage()
 class AddNurseryView extends StatelessWidget {

@@ -23,4 +23,27 @@ class StringConstants {
   static const String nurseryDistrict = 'Kreşin Bulunduğu İlçe';
   static const String monthlyFeeForNursery = 'Kreşten Alınacak Aylık Ücret';
   static const String nurseryAddress = 'Kreş Açık Adres Tarifi';
+  static const String addParent = 'Veli Ekle';
+  static const String addStaff = 'Personel Ekle';
+  static const String addStudent = 'Öğrenci Ekle';
+  static const String addAnnouncement = 'Duyuru Ekle';
+  static const String operationsAnnouncement = 'Duyuru İşlemleri';
+  static const String operationsStudent = 'Öğrenci İşlemleri';
+  static const String operationsParent = 'Veli İşlemleri';
+  static const String operationsStaff = 'Personel İşlemleri';
+  static const String editStaff = 'Personel Düzenle';
+  static const String createClass = 'Sınıf Oluşturma';
+  static const String listStaff = 'Personel Listesi';
+  static const String listAnnouncement = 'Duyuru Listesi';
+  static const String studentName = 'Öğrenci Adı';
+  static const String parentName = 'Veli Adı';
+  static const String parentLastname = 'Veli Soyadı';
+  static const String studentLastname = 'Öğrenci Soyadı';
+  static const String parentPhone = 'Veli Cep Telefonu';
+  static const String parentPhone2 = 'Veli Cep Telefonu - 2';
+  static const String adresss = 'Açık Adres Tarifi';
+  static const String className = 'Sınıf Adı';
+  static const String teacherName = 'Öğretmen Adı';
+  static const String asistantTeachName = 'Yardımcı Öğretmen Adı';
+  static const String saveButton = 'Kaydet';
 }
