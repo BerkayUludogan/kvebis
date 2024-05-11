@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/constants/image/image_path.dart';
@@ -17,7 +16,10 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends SplashViewModel {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: _loadingView());
+    return Scaffold(
+      body: _loadingView(),
+      resizeToAvoidBottomInset: false,
+    );
   }
 
   Widget _loadingView() {

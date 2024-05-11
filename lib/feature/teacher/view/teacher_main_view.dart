@@ -8,8 +8,8 @@ import 'package:kvebis_app/core/widgets/sizedBox.dart';
 import 'package:kvebis_app/feature/admin/core/widgets/card_button.dart';
 
 @RoutePage()
-class AdminMainView extends StatelessWidget {
-  const AdminMainView({super.key});
+class TeacherMainView extends StatelessWidget {
+  const TeacherMainView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class AdminMainView extends StatelessWidget {
         children: [
           Stack(
             children: [
-              const ContainerAppBar(text: StringConstants.admin),
+              const ContainerAppBar(text: 'Teacherrr'),
               Positioned(
                 left: 150,
                 child: ClipOval(

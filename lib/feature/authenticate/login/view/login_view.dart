@@ -1,14 +1,16 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kvebis_app/core/base/view/base_widget.dart';
-import 'package:kvebis_app/core/constants/image/image_path.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
+import 'package:kvebis_app/core/constants/image/image_path.dart';
 import 'package:kvebis_app/core/extension/context_extension.dart';
 import 'package:kvebis_app/core/widgets/button/base_button.dart';
 import 'package:kvebis_app/core/widgets/inputs/email_input.dart';
 import 'package:kvebis_app/core/widgets/inputs/password_input.dart';
-import 'package:kvebis_app/feature/authenticate/login/viewmodel/login_view_model.dart';
+import 'package:kvebis_app/feature/authenticate/login/viewmodel/login_viewmodel.dart';
 
+@RoutePage()
 class LoginView extends StatelessWidget {
   LoginView({super.key});
   final loginViewModel = LoginViewModel();
@@ -78,10 +80,7 @@ class LoginView extends StatelessWidget {
             height: context.mediumValue,
           ),
           BaseButton(
-            onPressed: () {
-              // loginViewModel.login();
-              loginViewModel.loginFirestore();
-            },
+            onPressed: loginViewModel.loginFirestore,
             name: StringConstants.login,
           ),
         ],

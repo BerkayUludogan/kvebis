@@ -15,10 +15,25 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+<<<<<<< HEAD
        SplashRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const NurseryAdminCreateClassView(),
+=======
+    AdminMainRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AdminMainView(),
+      );
+    },
+    LoginRoute.name: (routeData) {
+      final args = routeData.argsAs<LoginRouteArgs>(
+          orElse: () => const LoginRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: LoginView(key: args.key),
+>>>>>>> b569e63770bb2888e32497016bcff84386b4c949
       );
     },
     SplashRoute.name: (routeData) {
@@ -39,20 +54,56 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const NurseryAdminAddParentView(),
       );
     },
-    LoginRoute.name: (routeData) {
+    TeacherMainRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: LoginView(),
-      );
-    },
-    AdminMainRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: AdminMainView(),
+        child: const TeacherMainView(),
       );
     },
     
   };
+}
+
+/// generated route for
+/// [AdminMainView]
+class AdminMainRoute extends PageRouteInfo<void> {
+  const AdminMainRoute({List<PageRouteInfo>? children})
+      : super(
+          AdminMainRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AdminMainRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [LoginView]
+class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
+  LoginRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          LoginRoute.name,
+          args: LoginRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'LoginRoute';
+
+  static const PageInfo<LoginRouteArgs> page = PageInfo<LoginRouteArgs>(name);
+}
+
+class LoginRouteArgs {
+  const LoginRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'LoginRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -69,29 +120,15 @@ class SplashRoute extends PageRouteInfo<void> {
   static const PageInfo<void> page = PageInfo<void>(name);
 }
 /// generated route for
-/// [LoginView]
-class LoginRoute extends PageRouteInfo<void> {
-  const LoginRoute({List<PageRouteInfo>? children})
+/// [TeacherMainView]
+class TeacherMainRoute extends PageRouteInfo<void> {
+  const TeacherMainRoute({List<PageRouteInfo>? children})
       : super(
-          LoginRoute.name,
+          TeacherMainRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'LoginRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [AdminView]
-class AdminMainRoute extends PageRouteInfo<void> {
-  const AdminMainRoute({List<PageRouteInfo>? children})
-      : super(
-          AdminMainRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'AdminMainRoute';
+  static const String name = 'TeacherMainRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
