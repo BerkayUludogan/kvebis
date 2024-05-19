@@ -4,9 +4,8 @@ import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/extension/string_extension.dart';
 
 class EmailInput extends StatelessWidget {
-  const EmailInput({required this.controller, required this.text, super.key});
+  const EmailInput({required this.controller, super.key});
   final TextEditingController controller;
-  final String text;
   @override
   TextFormField build(BuildContext context) {
     return TextFormField(
@@ -15,7 +14,7 @@ class EmailInput extends StatelessWidget {
           value!.isValidEmails ? null : StringConstants.checkYourEmail,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-        labelText: text,
+        labelText: StringConstants.email,
         labelStyle: TextStyle(color: ColorConstants.blackColor),
         icon: const Icon(Icons.email),
       ),

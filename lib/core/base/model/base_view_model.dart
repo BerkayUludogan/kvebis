@@ -5,5 +5,5 @@ abstract mixin class BaseViewModel {
   // Function? loadingFunction;
   void setContext(BuildContext context);
   void init();
-  // void disp() {}
+  void disp() {}
 }

@@ -55,7 +55,8 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   @override
   void isLoadingChange() {
     final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
-        name: '_LoginViewModelBase.isLoadingChange');
+      name: '_LoginViewModelBase.isLoadingChange',
+    );
     try {
       return super.isLoadingChange();
     } finally {
@@ -66,7 +67,8 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   @override
   void isVisibleStateChange() {
     final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
-        name: '_LoginViewModelBase.isVisibleStateChange');
+      name: '_LoginViewModelBase.isVisibleStateChange',
+    );
     try {
       return super.isVisibleStateChange();
     } finally {
@@ -77,8 +79,8 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   @override
   String toString() {
     return '''
-isLoading: ${isLoading},
-isVisible: ${isVisible}
+    isLoading: ${isLoading},
+    isVisible: ${isVisible}
     ''';
   }
 }

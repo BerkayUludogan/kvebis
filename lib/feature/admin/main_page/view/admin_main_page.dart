@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/constants/image/image_path.dart';
+import 'package:kvebis_app/core/extension/context_extension.dart';
 import 'package:kvebis_app/core/widgets/container/appbar.dart';
-import 'package:kvebis_app/core/widgets/sized_box.dart';
 import 'package:kvebis_app/feature/admin/core/widgets/card_button.dart';
+import 'package:kvebis_app/main.dart';
+import 'package:kvebis_app/product/navigator/app_router.dart';
 
 @RoutePage()
 class AdminMainView extends StatelessWidget {
@@ -16,15 +18,11 @@ class AdminMainView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorConstants.buttonColor,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.logout,
-              color: Colors.white,
-            ),
-          ),
-        ],
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.white,
+        ),
       ),
       body: Column(
         children: [
@@ -43,22 +41,26 @@ class AdminMainView extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox10(),
+          context.verticalLowSpace,
           CustomCardButton(
-            onTap: () {},
+            onTap: () {
+              getIt<AppRouter>().push(OperationsRoute());
+            },
             text: StringConstants.nurseryOperations,
           ),
-          const SizedBox10(),
+          context.verticalLowSpace,
           CustomCardButton(
             onTap: () {},
             text: StringConstants.nurseryViewing,
           ),
-          const SizedBox10(),
+          context.verticalLowSpace,
           CustomCardButton(
-            onTap: () {},
+            onTap: () {
+              getIt<AppRouter>().push(AddNurseryRoute());
+            },
             text: StringConstants.nurseryAddtion,
           ),
-          const SizedBox10(),
+          context.verticalLowSpace,
           CustomCardButton(
             onTap: () {},
             text: StringConstants.nurseryEditing,

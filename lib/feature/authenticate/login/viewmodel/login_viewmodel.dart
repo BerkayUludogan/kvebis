@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/base/model/base_view_model.dart';
 import 'package:kvebis_app/feature/authenticate/login/firebase/login.dart';
@@ -11,7 +10,6 @@ import 'package:kvebis_app/product/firebase/firebase_collections.dart';
 import 'package:kvebis_app/product/navigator/app_router.dart';
 import 'package:kvebis_app/product/utility/collection_refence.dart';
 import 'package:mobx/mobx.dart';
-
 part 'login_viewmodel.g.dart';
 
 class LoginViewModel = _LoginViewModelBase with _$LoginViewModel;
@@ -27,9 +25,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   void setContext(BuildContext context) => viewModelContext = context;
 
   @override
-  void init() {
-    print('merhaba');
-  }
+  void init() {}
 
   @observable
   bool isLoading = false;
@@ -71,25 +67,23 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   }
 
   Future<void> loginFirestore() async {
+    final adminUsers = await FirebaseCollectionsEnum.adminUsers.get(Login());
+
     final users = await FirebaseCollectionsEnum.users.get(Login());
 
     final allDocumentIds =
         await CustomCollectionReference<Role>(collectionPath: 'roles')
             .getAllDocumentIds();
 
-    for (final user in users) {
+    for (final user in [...adminUsers, ...users]) {
       if (emailController.text == user.email &&
           passwordController.text == user.password) {
-        if (allDocumentIds[0] == user.roleID) {
-          unawaited(getIt<AppRouter>().replace(const AdminMainRoute()));
-          getIt<AppRouter>().popUntilRoot();
-        } else if (allDocumentIds[1] == user.roleID) {
-          unawaited(getIt<AppRouter>().replace(const TeacherMainRoute()));
-          getIt<AppRouter>().popUntilRoot();
-        } /* else if (allDocumentIds[2] == user.roleID) {
-          unawaited(getIt<AppRouter>().replace(const  Route()));
-          getIt<AppRouter>().popUntilRoot();
-        }  */
+        if (adminUsers.contains(user)) {
+          unawaited(getIt<AppRouter>().push(const AdminMainRoute()));
+        } else if (users.contains(user) && allDocumentIds[1] == user.roleID) {
+          unawaited(getIt<AppRouter>().push(const TeacherMainRoute()));
+        }
+        return;
       }
     }
   }

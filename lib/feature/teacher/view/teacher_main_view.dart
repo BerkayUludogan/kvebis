@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/constants/image/image_path.dart';
+import 'package:kvebis_app/core/extension/context_extension.dart';
 import 'package:kvebis_app/core/widgets/container/appbar.dart';
-import 'package:kvebis_app/core/widgets/sized_box.dart';
 import 'package:kvebis_app/feature/admin/core/widgets/card_button.dart';
 
 @RoutePage()
@@ -43,22 +43,22 @@ class TeacherMainView extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox10(),
+          context.verticalLowSpace,
           CustomCardButton(
             onTap: () {},
             text: StringConstants.nurseryOperations,
           ),
-          const SizedBox10(),
+          context.verticalLowSpace,
           CustomCardButton(
             onTap: () {},
             text: StringConstants.nurseryViewing,
           ),
-          const SizedBox10(),
+          context.verticalLowSpace,
           CustomCardButton(
             onTap: () {},
             text: StringConstants.nurseryAddtion,
           ),
-          const SizedBox10(),
+          context.verticalLowSpace,
           CustomCardButton(
             onTap: () {},
             text: StringConstants.nurseryEditing,

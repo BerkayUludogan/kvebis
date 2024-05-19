@@ -2,17 +2,19 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
+import 'package:kvebis_app/core/constants/image/image_path.dart';
 
 @RoutePage()
-class NurseryAdminAddParentView extends StatefulWidget {
-  const NurseryAdminAddParentView({super.key});
+class NurseryAdminCreateClassView extends StatefulWidget {
+  const NurseryAdminCreateClassView({super.key});
 
   @override
-  State<NurseryAdminAddParentView> createState() =>
-      _NurseryAdminAddParentViewState();
+  State<NurseryAdminCreateClassView> createState() =>
+      _NurseryAdminCreateClassViewState();
 }
 
-class _NurseryAdminAddParentViewState extends State<NurseryAdminAddParentView> {
+class _NurseryAdminCreateClassViewState
+    extends State<NurseryAdminCreateClassView> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class _NurseryAdminAddParentViewState extends State<NurseryAdminAddParentView> {
       appBar: AppBar(
         backgroundColor: ColorConstants.buttonColor,
         title: const Text(
-          StringConstants.addParent,
+          StringConstants.createClass,
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
@@ -39,7 +41,7 @@ class _NurseryAdminAddParentViewState extends State<NurseryAdminAddParentView> {
           children: [
             TextFormField(
               decoration: InputDecoration(
-                labelText: StringConstants.parentName,
+                labelText: StringConstants.className,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -50,7 +52,7 @@ class _NurseryAdminAddParentViewState extends State<NurseryAdminAddParentView> {
             ),
             TextFormField(
               decoration: InputDecoration(
-                labelText: StringConstants.parentLastname,
+                labelText: StringConstants.teacherName,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -59,42 +61,13 @@ class _NurseryAdminAddParentViewState extends State<NurseryAdminAddParentView> {
             const SizedBox(height: 10),
             TextFormField(
               decoration: InputDecoration(
-                labelText: StringConstants.parentPhone,
+                labelText: StringConstants.asistantTeachName,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
             ),
             const SizedBox(height: 10),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: StringConstants.parentPhone2,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: StringConstants.email,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-              keyboardType: TextInputType.phone,
-            ),
-            const SizedBox(height: 10),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: StringConstants.adresss,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-              maxLines: 3,
-            ),
-            const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: ColorConstants.buttonColor,
@@ -106,9 +79,15 @@ class _NurseryAdminAddParentViewState extends State<NurseryAdminAddParentView> {
                 ),
               ),
               onPressed: () {},
-              child: const Text(StringConstants.saveButton,
-                  style: TextStyle(color: Colors.white)),
+              child: const Text(
+                StringConstants.saveButton,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             ),
+            const SizedBox(height: 10),
+            ImagePaths.createClass.toWidget(width: 100, height: 100),
           ],
         ),
       ),

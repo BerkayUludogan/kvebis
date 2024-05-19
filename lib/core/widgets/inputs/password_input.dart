@@ -4,14 +4,12 @@ import 'package:kvebis_app/core/constants/app/string_constant.dart';
 class PasswordInput extends StatelessWidget {
   const PasswordInput({
     required this.controller,
-    required this.text,
-    required this.onPressed,
+    this.onPressed,
     this.isVisible = false,
     super.key,
   });
   final TextEditingController controller;
-  final VoidCallback onPressed;
-  final String text;
+  final VoidCallback? onPressed;
   final bool isVisible;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,7 @@ class PasswordInput extends StatelessWidget {
           value!.isNotEmpty ? null : StringConstants.enterYourPassword,
       obscureText: isVisible,
       decoration: InputDecoration(
-        labelText: text,
+        labelText: StringConstants.password,
         icon: const Icon(Icons.lock),
         suffixIcon: IconButton(
           padding: EdgeInsets.zero,

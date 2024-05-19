@@ -69,7 +69,6 @@ class LoginView extends StatelessWidget {
         children: [
           EmailInput(
             controller: loginViewModel.emailController,
-            text: StringConstants.email,
           ),
           SizedBox(
             height: context.normalValue,
@@ -93,7 +92,6 @@ class LoginView extends StatelessWidget {
       builder: (_) {
         return PasswordInput(
           controller: loginViewModel.passwordController,
-          text: StringConstants.password,
           onPressed: loginViewModel.isVisibleStateChange,
           isVisible: loginViewModel.isVisible,
         );

@@ -4,16 +4,15 @@ import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
 
 @RoutePage()
-class NurseryAdminAddStudentView extends StatefulWidget {
-  const NurseryAdminAddStudentView({super.key});
+class NurseryAdminAddParentView extends StatefulWidget {
+  const NurseryAdminAddParentView({super.key});
 
   @override
-  State<NurseryAdminAddStudentView> createState() =>
-      _NurseryAdminAddStudentViewState();
+  State<NurseryAdminAddParentView> createState() =>
+      _NurseryAdminAddParentViewState();
 }
 
-class _NurseryAdminAddStudentViewState
-    extends State<NurseryAdminAddStudentView> {
+class _NurseryAdminAddParentViewState extends State<NurseryAdminAddParentView> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class _NurseryAdminAddStudentViewState
       appBar: AppBar(
         backgroundColor: ColorConstants.buttonColor,
         title: const Text(
-          StringConstants.addStudent,
+          StringConstants.addParent,
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
@@ -40,7 +39,7 @@ class _NurseryAdminAddStudentViewState
           children: [
             TextFormField(
               decoration: InputDecoration(
-                labelText: StringConstants.studentName,
+                labelText: StringConstants.parentName,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -49,24 +48,6 @@ class _NurseryAdminAddStudentViewState
             const SizedBox(
               height: 10,
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: StringConstants.studentLastname,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: StringConstants.parentName,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
             TextFormField(
               decoration: InputDecoration(
                 labelText: StringConstants.parentLastname,
@@ -79,6 +60,24 @@ class _NurseryAdminAddStudentViewState
             TextFormField(
               decoration: InputDecoration(
                 labelText: StringConstants.parentPhone,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: StringConstants.parentPhone2,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: StringConstants.email,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -107,8 +106,12 @@ class _NurseryAdminAddStudentViewState
                 ),
               ),
               onPressed: () {},
-              child: const Text(StringConstants.saveButton,
-                  style: TextStyle(color: Colors.white)),
+              child: const Text(
+                StringConstants.saveButton,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             ),
           ],
         ),

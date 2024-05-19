@@ -15,14 +15,21 @@ class StringConstants {
   static const String emailDoesntValid = 'Girilen E-posta Yanlış !';
   static const String checkYourEmail = 'E-postanızı Kontrol edin !';
   static const String enterYourPassword = 'Şifrenizi Giriniz';
+  static const String checkTheEnteredText = 'Girilen Metini Kontrol Edin !';
+  static const String checkYourPhoneNumber =
+      'Telefon Numaranızı Kontrol Edin !';
+
   static const String nurseryOwnersName = 'Kreş Sahibinin Adi';
   static const String nurseryOwnersSurname = 'Kreş Sahibinin Soyadı';
   static const String nurseryOwnersPhone = 'Kreş Sahibinin Telefonu';
-  static const String nurseryName = 'Kreşin Adı';
+  static const String nurserysName = 'Kreşin Adı';
   static const String nurseryLocationProvince = 'Kreşin Bulunduğu İl';
   static const String nurseryDistrict = 'Kreşin Bulunduğu İlçe';
   static const String monthlyFeeForNursery = 'Kreşten Alınacak Aylık Ücret';
   static const String nurseryAddress = 'Kreş Açık Adres Tarifi';
+  static const String nurseryAdditionPanel = 'Kreş Ekleme Paneli';
+
+  static const String nurseryName = 'Kreş adı';
   static const String addParent = 'Veli Ekle';
   static const String addStaff = 'Personel Ekle';
   static const String addStudent = 'Öğrenci Ekle';
@@ -46,4 +53,5 @@ class StringConstants {
   static const String teacherName = 'Öğretmen Adı';
   static const String asistantTeachName = 'Yardımcı Öğretmen Adı';
   static const String saveButton = 'Kaydet';
+  static const String adminID = 'Yönetici ID';
 }

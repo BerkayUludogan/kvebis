@@ -1,52 +1,34 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:kvebis_app/product/utility/exception/base/base_firebase_model.dart';
 part 'add_nursery.g.dart';
 
 @JsonSerializable()
-class AddNursery {
+class AddNursery extends BaseFirebaseModel<AddNursery> {
   AddNursery({
-    this.monthlyFeeForNursery,
-    this.nurseryAddress,
-    this.nurseryDistrict,
-    this.nurseryLocationProvince,
     this.nurseryName,
     this.nurseryOwnersName,
-    this.nurseryOwnersPhone,
     this.nurseryOwnersSurname,
+    this.nurseryOwnersPhone,
+    this.nurseryDistrict,
+    this.nurseryLocationProvince,
+    this.nurseryAddress,
+    this.monthlyFeeForNursery,
+    this.adminID,
   });
 
-  factory AddNursery.fromJson(Map<String, dynamic> json) =>
-      _$AddNurseryFromJson(json);
-  int? monthlyFeeForNursery;
-  String? nurseryAddress;
-  String? nurseryDistrict;
-  String? nurseryLocationProvince;
   String? nurseryName;
   String? nurseryOwnersName;
-  String? nurseryOwnersPhone;
   String? nurseryOwnersSurname;
+  String? nurseryOwnersPhone;
+  String? nurseryDistrict;
+  String? nurseryLocationProvince;
+  String? nurseryAddress;
+  String? monthlyFeeForNursery;
+  String? adminID;
 
+  @override
   Map<String, dynamic> toJson() => _$AddNurseryToJson(this);
 
-  AddNursery copyWith({
-    int? monthlyFeeForNursery,
-    String? nurseryAddress,
-    String? nurseryDistrict,
-    String? nurseryLocationProvince,
-    String? nurseryName,
-    String? nurseryOwnersName,
-    String? nurseryOwnersPhone,
-    String? nurseryOwnersSurname,
-  }) {
-    return AddNursery(
-      monthlyFeeForNursery: monthlyFeeForNursery ?? this.monthlyFeeForNursery,
-      nurseryAddress: nurseryAddress ?? this.nurseryAddress,
-      nurseryDistrict: nurseryDistrict ?? this.nurseryDistrict,
-      nurseryLocationProvince:
-          nurseryLocationProvince ?? this.nurseryLocationProvince,
-      nurseryName: nurseryName ?? this.nurseryName,
-      nurseryOwnersName: nurseryOwnersName ?? this.nurseryOwnersName,
-      nurseryOwnersPhone: nurseryOwnersPhone ?? this.nurseryOwnersPhone,
-      nurseryOwnersSurname: nurseryOwnersSurname ?? this.nurseryOwnersSurname,
-    );
-  }
+  @override
+  AddNursery fromJson(Map<String, dynamic> json) => _$AddNurseryFromJson(json);
 }

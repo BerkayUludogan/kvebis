@@ -2,11 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kvebis_app/feature/admin/add_nursery/view/add_nursery_view.dart';
 import 'package:kvebis_app/feature/admin/main_page/view/admin_main_page.dart';
+import 'package:kvebis_app/feature/admin/nursery_operations/view/operations_view.dart';
 import 'package:kvebis_app/feature/authenticate/login/view/login_view.dart';
-import 'package:kvebis_app/feature/nursery_admin/add_parent/view/nursery_admin_addParent_page.dart';
-import 'package:kvebis_app/feature/nursery_admin/add_student/view/nursery_admin_addStudent_page.dart';
-import 'package:kvebis_app/feature/nursery_admin/create_class/view/nursery_admin_createClass_page.dart';
-import 'package:kvebis_app/feature/nursery_admin/main_page/view/nursery_admin_main_page.dart';
+import 'package:kvebis_app/feature/nursery_admin/add_parent/view/add_parent_view.dart';
+import 'package:kvebis_app/feature/nursery_admin/add_student/view/add_student_view.dart';
+import 'package:kvebis_app/feature/nursery_admin/create_class/view/create_class_view.dart';
+import 'package:kvebis_app/feature/nursery_admin/main_page/view/main_page_view.dart';
 import 'package:kvebis_app/feature/splash/splash_view.dart';
 import 'package:kvebis_app/feature/teacher/view/teacher_main_view.dart';
 
@@ -55,6 +56,12 @@ class AppRouter extends _$AppRouter {
         CustomRoute(
           page: NurseryAdminCreateClassRoute.page,
           path: '/nurseryAdminCreateClassView',
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 400,
+        ),
+        CustomRoute(
+          page: OperationsRoute.page,
+          path: '/operationsView',
           transitionsBuilder: TransitionsBuilders.fadeIn,
           durationInMilliseconds: 400,
         ),

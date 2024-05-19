@@ -16,9 +16,11 @@ abstract class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     AddNurseryRoute.name: (routeData) {
+      final args = routeData.argsAs<AddNurseryRouteArgs>(
+          orElse: () => const AddNurseryRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const AddNurseryView(),
+        child: AddNurseryView(key: args.key),
       );
     },
     AdminMainRoute.name: (routeData) {
@@ -59,6 +61,14 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const NurseryAdminView(),
       );
     },
+    OperationsRoute.name: (routeData) {
+      final args = routeData.argsAs<OperationsRouteArgs>(
+          orElse: () => const OperationsRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: OperationsView(key: args.key),
+      );
+    },
     SplashRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -76,16 +86,31 @@ abstract class _$AppRouter extends RootStackRouter {
 
 /// generated route for
 /// [AddNurseryView]
-class AddNurseryRoute extends PageRouteInfo<void> {
-  const AddNurseryRoute({List<PageRouteInfo>? children})
-      : super(
+class AddNurseryRoute extends PageRouteInfo<AddNurseryRouteArgs> {
+  AddNurseryRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           AddNurseryRoute.name,
+          args: AddNurseryRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'AddNurseryRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<AddNurseryRouteArgs> page =
+      PageInfo<AddNurseryRouteArgs>(name);
+}
+
+class AddNurseryRouteArgs {
+  const AddNurseryRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'AddNurseryRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -184,6 +209,35 @@ class NurseryAdminRoute extends PageRouteInfo<void> {
   static const String name = 'NurseryAdminRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OperationsView]
+class OperationsRoute extends PageRouteInfo<OperationsRouteArgs> {
+  OperationsRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          OperationsRoute.name,
+          args: OperationsRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'OperationsRoute';
+
+  static const PageInfo<OperationsRouteArgs> page =
+      PageInfo<OperationsRouteArgs>(name);
+}
+
+class OperationsRouteArgs {
+  const OperationsRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'OperationsRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for

@@ -2,19 +2,18 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
-import 'package:kvebis_app/core/constants/image/image_path.dart';
 
 @RoutePage()
-class NurseryAdminCreateClassView extends StatefulWidget {
-  const NurseryAdminCreateClassView({super.key});
+class NurseryAdminAddStudentView extends StatefulWidget {
+  const NurseryAdminAddStudentView({super.key});
 
   @override
-  State<NurseryAdminCreateClassView> createState() =>
-      _NurseryAdminCreateClassViewState();
+  State<NurseryAdminAddStudentView> createState() =>
+      _NurseryAdminAddStudentViewState();
 }
 
-class _NurseryAdminCreateClassViewState
-    extends State<NurseryAdminCreateClassView> {
+class _NurseryAdminAddStudentViewState
+    extends State<NurseryAdminAddStudentView> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class _NurseryAdminCreateClassViewState
       appBar: AppBar(
         backgroundColor: ColorConstants.buttonColor,
         title: const Text(
-          StringConstants.createClass,
+          StringConstants.addStudent,
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
@@ -41,7 +40,7 @@ class _NurseryAdminCreateClassViewState
           children: [
             TextFormField(
               decoration: InputDecoration(
-                labelText: StringConstants.className,
+                labelText: StringConstants.studentName,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -52,7 +51,7 @@ class _NurseryAdminCreateClassViewState
             ),
             TextFormField(
               decoration: InputDecoration(
-                labelText: StringConstants.teacherName,
+                labelText: StringConstants.studentLastname,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -61,13 +60,42 @@ class _NurseryAdminCreateClassViewState
             const SizedBox(height: 10),
             TextFormField(
               decoration: InputDecoration(
-                labelText: StringConstants.asistantTeachName,
+                labelText: StringConstants.parentName,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
             ),
             const SizedBox(height: 10),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: StringConstants.parentLastname,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: StringConstants.parentPhone,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+              keyboardType: TextInputType.phone,
+            ),
+            const SizedBox(height: 10),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: StringConstants.adresss,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+              maxLines: 3,
+            ),
+            const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: ColorConstants.buttonColor,
@@ -79,11 +107,13 @@ class _NurseryAdminCreateClassViewState
                 ),
               ),
               onPressed: () {},
-              child: const Text(StringConstants.saveButton,
-                  style: TextStyle(color: Colors.white)),
+              child: const Text(
+                StringConstants.saveButton,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             ),
-            const SizedBox(height: 10),
-            ImagePaths.createClass.toWidget(width: 100, height: 100),
           ],
         ),
       ),

@@ -49,6 +49,11 @@ extension PaddingExtensionSymetric on BuildContext {
       EdgeInsets.symmetric(horizontal: highValue);
 }
 
+extension SizedBoxExtension on BuildContext {
+  SizedBox get verticalLowSpace => const SizedBox(height: 10);
+  SizedBox get horizontalLowSpace => const SizedBox(width: 10);
+}
+
 extension PageExtension on BuildContext {
   Color get randomColor => Colors.primaries[Random().nextInt(17)];
 }
