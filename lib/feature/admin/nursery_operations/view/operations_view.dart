@@ -5,6 +5,8 @@ import 'package:kvebis_app/core/base/view/base_widget.dart';
 import 'package:kvebis_app/core/constants/app/color_constants.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/feature/admin/nursery_operations/viewmodel/operations_viewmodel.dart';
+import 'package:kvebis_app/main.dart';
+import 'package:kvebis_app/product/navigator/app_router.dart';
 
 @RoutePage()
 class OperationsView extends StatelessWidget {
@@ -47,7 +49,26 @@ class OperationsView extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final nurseryItem = operationsViewModel.nursery[index];
                       return ListTile(
-                        onTap: () {},
+                        onTap: () {
+                          getIt<AppRouter>().push(NurseryRouteing(
+                            adminID: nurseryItem.adminID.toString(),
+                            monthlyFeeForNursery:
+                                nurseryItem.monthlyFeeForNursery.toString(),
+                            nurseryAddress:
+                                nurseryItem.nurseryAddress.toString(),
+                            nurseryDistrict:
+                                nurseryItem.nurseryDistrict.toString(),
+                            nurseryLocationProvince:
+                                nurseryItem.nurseryLocationProvince.toString(),
+                            nurseryName: nurseryItem.nurseryName.toString(),
+                            nurseryOwnersName:
+                                nurseryItem.nurseryOwnersName.toString(),
+                            nurseryOwnersPhone:
+                                nurseryItem.nurseryOwnersPhone.toString(),
+                            nurseryOwnersSurname:
+                                nurseryItem.nurseryOwnersSurname.toString(),
+                          ));
+                        },
                         trailing: Text(
                           '${nurseryItem.monthlyFeeForNursery} TL',
                           style: const TextStyle(

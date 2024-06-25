@@ -47,6 +47,17 @@ abstract class _AddNurseryViewModelBase with BaseViewModel, Store {
   void setContext(BuildContext context) => viewModelContext = context;
 
   Future<void> save() async {
+    if (adminIDController.text == '' ||
+        emailController.text == '' ||
+        passwordController.text == '' ||
+        ownerNameController.text == '' ||
+        ownerSurnameController.text == '' ||
+        ownerPhoneController.text == '' ||
+        nurseryNameController.text == '' ||
+        locationProvinceController.text == '' ||
+        nurseryDistrictController.text == '' ||
+        monthlyFeeForNurseryController.text == '' ||
+        nurseryAddressController.text == '') return;
     await FirebaseCollectionsEnum.addNursery.reference.add(
       AddNursery(
         nurseryName: nurseryNameController.text,

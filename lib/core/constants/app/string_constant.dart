@@ -1,13 +1,15 @@
 class StringConstants {
   StringConstants._();
   static const String save = 'KAYDET';
-  static const String appNameShort = 'K - VEBİS';
+  static const String appNameShortSplash = 'K - VEBİS';
+  static const String appNameShort = 'K-VEBİS';
   static const String appName = 'Kreş Veli Bilgilendirme Sistemi';
   static const String admin = 'Yönetici';
   static const String nurseryOperations = 'Kreş İşlemleri';
   static const String nurseryViewing = 'Kreş Görüntüleme';
   static const String nurseryAddtion = 'Kreş Ekleme';
   static const String nurseryEditing = 'Kreş Düzenleme';
+  static const String nurseryDetails = 'Kreş Detayları';
   static const String email = 'Email';
   static const String login = 'Giriş Yap';
   static const String password = 'Şifre';
@@ -19,6 +21,8 @@ class StringConstants {
   static const String checkYourPhoneNumber =
       'Telefon Numaranızı Kontrol Edin !';
 
+  static const String ownerOfTheNursery = 'Kreşin Sahibi:';
+
   static const String nurseryOwnersName = 'Kreş Sahibinin Adi';
   static const String nurseryOwnersSurname = 'Kreş Sahibinin Soyadı';
   static const String nurseryOwnersPhone = 'Kreş Sahibinin Telefonu';
@@ -26,7 +30,7 @@ class StringConstants {
   static const String nurseryLocationProvince = 'Kreşin Bulunduğu İl';
   static const String nurseryDistrict = 'Kreşin Bulunduğu İlçe';
   static const String monthlyFeeForNursery = 'Kreşten Alınacak Aylık Ücret';
-  static const String nurseryAddress = 'Kreş Açık Adres Tarifi';
+  static const String nurseryAddress = 'Kreşin Adresi';
   static const String nurseryAdditionPanel = 'Kreş Ekleme Paneli';
 
   static const String nurseryName = 'Kreş adı';

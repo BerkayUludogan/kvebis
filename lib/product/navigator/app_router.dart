@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kvebis_app/feature/admin/add_nursery/view/add_nursery_view.dart';
 import 'package:kvebis_app/feature/admin/main_page/view/admin_main_page.dart';
 import 'package:kvebis_app/feature/admin/nursery_operations/view/operations_view.dart';
+import 'package:kvebis_app/feature/admin/nursery_viewing/view/nursery_viewing.dart';
 import 'package:kvebis_app/feature/authenticate/login/view/login_view.dart';
 import 'package:kvebis_app/feature/nursery_admin/add_parent/view/add_parent_view.dart';
 import 'package:kvebis_app/feature/nursery_admin/add_student/view/add_student_view.dart';
@@ -62,6 +63,12 @@ class AppRouter extends _$AppRouter {
         CustomRoute(
           page: OperationsRoute.page,
           path: '/operationsView',
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 400,
+        ),
+        CustomRoute(
+          page: NurseryRouteing.page,
+          path: '/nurseryViewing',
           transitionsBuilder: TransitionsBuilders.fadeIn,
           durationInMilliseconds: 400,
         ),

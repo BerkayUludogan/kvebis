@@ -42,8 +42,8 @@ class AddNurseryView extends StatelessWidget {
           centerTitle: true,
         ),
         body: SafeArea(
-          child: Center(
-            child: SingleChildScrollView(
+          child: SingleChildScrollView(
+            child: Center(
               child: Column(
                 children: [
                   Padding(
@@ -64,6 +64,7 @@ class AddNurseryView extends StatelessWidget {
       key: viewModel.formState,
       autovalidateMode: AutovalidateMode.always,
       child: Column(
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           nursaryNameInput(viewModel),
           context.verticalLowSpace,

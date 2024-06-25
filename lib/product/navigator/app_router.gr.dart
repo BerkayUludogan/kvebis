@@ -61,6 +61,24 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const NurseryAdminView(),
       );
     },
+    NurseryRouteing.name: (routeData) {
+      final args = routeData.argsAs<NurseryRouteingArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: NurseryViewing(
+          nurseryName: args.nurseryName,
+          nurseryOwnersName: args.nurseryOwnersName,
+          nurseryOwnersSurname: args.nurseryOwnersSurname,
+          nurseryOwnersPhone: args.nurseryOwnersPhone,
+          nurseryDistrict: args.nurseryDistrict,
+          nurseryLocationProvince: args.nurseryLocationProvince,
+          nurseryAddress: args.nurseryAddress,
+          monthlyFeeForNursery: args.monthlyFeeForNursery,
+          adminID: args.adminID,
+          key: args.key,
+        ),
+      );
+    },
     OperationsRoute.name: (routeData) {
       final args = routeData.argsAs<OperationsRouteArgs>(
           orElse: () => const OperationsRouteArgs());
@@ -209,6 +227,84 @@ class NurseryAdminRoute extends PageRouteInfo<void> {
   static const String name = 'NurseryAdminRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [NurseryViewing]
+class NurseryRouteing extends PageRouteInfo<NurseryRouteingArgs> {
+  NurseryRouteing({
+    required String nurseryName,
+    required String nurseryOwnersName,
+    required String nurseryOwnersSurname,
+    required String nurseryOwnersPhone,
+    required String nurseryDistrict,
+    required String nurseryLocationProvince,
+    required String nurseryAddress,
+    required String monthlyFeeForNursery,
+    required String adminID,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          NurseryRouteing.name,
+          args: NurseryRouteingArgs(
+            nurseryName: nurseryName,
+            nurseryOwnersName: nurseryOwnersName,
+            nurseryOwnersSurname: nurseryOwnersSurname,
+            nurseryOwnersPhone: nurseryOwnersPhone,
+            nurseryDistrict: nurseryDistrict,
+            nurseryLocationProvince: nurseryLocationProvince,
+            nurseryAddress: nurseryAddress,
+            monthlyFeeForNursery: monthlyFeeForNursery,
+            adminID: adminID,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'NurseryRouteing';
+
+  static const PageInfo<NurseryRouteingArgs> page =
+      PageInfo<NurseryRouteingArgs>(name);
+}
+
+class NurseryRouteingArgs {
+  const NurseryRouteingArgs({
+    required this.nurseryName,
+    required this.nurseryOwnersName,
+    required this.nurseryOwnersSurname,
+    required this.nurseryOwnersPhone,
+    required this.nurseryDistrict,
+    required this.nurseryLocationProvince,
+    required this.nurseryAddress,
+    required this.monthlyFeeForNursery,
+    required this.adminID,
+    this.key,
+  });
+
+  final String nurseryName;
+
+  final String nurseryOwnersName;
+
+  final String nurseryOwnersSurname;
+
+  final String nurseryOwnersPhone;
+
+  final String nurseryDistrict;
+
+  final String nurseryLocationProvince;
+
+  final String nurseryAddress;
+
+  final String monthlyFeeForNursery;
+
+  final String adminID;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'NurseryRouteingArgs{nurseryName: $nurseryName, nurseryOwnersName: $nurseryOwnersName, nurseryOwnersSurname: $nurseryOwnersSurname, nurseryOwnersPhone: $nurseryOwnersPhone, nurseryDistrict: $nurseryDistrict, nurseryLocationProvince: $nurseryLocationProvince, nurseryAddress: $nurseryAddress, monthlyFeeForNursery: $monthlyFeeForNursery, adminID: $adminID, key: $key}';
+  }
 }
 
 /// generated route for

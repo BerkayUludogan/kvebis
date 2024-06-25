@@ -51,6 +51,7 @@ extension PaddingExtensionSymetric on BuildContext {
 
 extension SizedBoxExtension on BuildContext {
   SizedBox get verticalLowSpace => const SizedBox(height: 10);
+  SizedBox get verticalMidSpace => const SizedBox(height: 16);
   SizedBox get horizontalLowSpace => const SizedBox(width: 10);
 }
 

@@ -55,8 +55,7 @@ mixin _$OperationsViewModel on _OperationsViewModelBase, Store {
   @override
   void isLoadingChange() {
     final _$actionInfo = _$_OperationsViewModelBaseActionController.startAction(
-      name: '_OperationsViewModelBase.isLoadingChange',
-    );
+        name: '_OperationsViewModelBase.isLoadingChange');
     try {
       return super.isLoadingChange();
     } finally {
