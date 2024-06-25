@@ -5,6 +5,7 @@ import 'package:kvebis_app/core/extension/context_extension.dart';
 import 'package:kvebis_app/core/widgets/button/base_button.dart';
 import 'package:kvebis_app/feature/admin/add_nursery/model/add_nursery.dart';
 import 'package:kvebis_app/main.dart';
+import 'package:kvebis_app/product/firebase/firebase_collections.dart';
 import 'package:kvebis_app/product/navigator/app_router.dart';
 
 @RoutePage()
@@ -67,6 +68,13 @@ class _NurseryViewingState extends State<NurseryViewing> {
                       .push(AddNurseryRoute(addNursery: widget.nursery));
                 },
               ),
+              BaseButton(
+                name: StringConstants.nurseryDelete,
+                onPressed: () {
+                  delete();
+                  getIt<AppRouter>().push(const AdminMainRoute());
+                },
+              ),
             ],
           ),
         ),
@@ -86,5 +94,11 @@ class _NurseryViewingState extends State<NurseryViewing> {
       text,
       style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold),
     );
+  }
+
+  Future<void> delete() async {
+    await FirebaseCollectionsEnum.addNursery.reference
+        .doc(widget.nursery.id)
+        .delete();
   }
 }

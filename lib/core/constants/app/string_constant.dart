@@ -8,7 +8,8 @@ class StringConstants {
   static const String nurseryOperations = 'Kreş İşlemleri';
   static const String nurseryViewing = 'Kreş Görüntüleme';
   static const String nurseryAddtion = 'Kreş Ekleme';
-  static const String nurseryEditing = 'Kreş Düzenleme';
+  static const String nurseryEditing = 'Kreşi Düzenle';
+  static const String nurseryDelete = 'Kreşi Sil';
   static const String nurseryDetails = 'Kreş Detayları';
   static const String email = 'Email';
   static const String login = 'Giriş Yap';
