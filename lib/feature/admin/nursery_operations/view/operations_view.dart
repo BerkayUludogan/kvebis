@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kvebis_app/core/base/view/base_widget.dart';
@@ -50,24 +51,11 @@ class OperationsView extends StatelessWidget {
                       final nurseryItem = operationsViewModel.nursery[index];
                       return ListTile(
                         onTap: () {
-                          getIt<AppRouter>().push(NurseryRouteing(
-                            adminID: nurseryItem.adminID.toString(),
-                            monthlyFeeForNursery:
-                                nurseryItem.monthlyFeeForNursery.toString(),
-                            nurseryAddress:
-                                nurseryItem.nurseryAddress.toString(),
-                            nurseryDistrict:
-                                nurseryItem.nurseryDistrict.toString(),
-                            nurseryLocationProvince:
-                                nurseryItem.nurseryLocationProvince.toString(),
-                            nurseryName: nurseryItem.nurseryName.toString(),
-                            nurseryOwnersName:
-                                nurseryItem.nurseryOwnersName.toString(),
-                            nurseryOwnersPhone:
-                                nurseryItem.nurseryOwnersPhone.toString(),
-                            nurseryOwnersSurname:
-                                nurseryItem.nurseryOwnersSurname.toString(),
-                          ));
+                          getIt<AppRouter>().push(
+                            NurseryRouteing(
+                              nursery: nurseryItem,
+                            ),
+                          );
                         },
                         trailing: Text(
                           '${nurseryItem.monthlyFeeForNursery} TL',

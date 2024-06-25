@@ -32,7 +32,7 @@ class StringConstants {
   static const String monthlyFeeForNursery = 'Kreşten Alınacak Aylık Ücret';
   static const String nurseryAddress = 'Kreşin Adresi';
   static const String nurseryAdditionPanel = 'Kreş Ekleme Paneli';
-
+  static const String nurseryArrangementPanel = 'Kreş Güncelleme Paneli';
   static const String nurseryName = 'Kreş adı';
   static const String addParent = 'Veli Ekle';
   static const String addStaff = 'Personel Ekle';

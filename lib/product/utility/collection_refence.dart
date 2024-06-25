@@ -5,7 +5,7 @@ class CustomCollectionReference<T extends BaseFirebaseModel<T>> {
   CustomCollectionReference({required this.collectionPath});
 
   final String collectionPath;
-
+  T? currentParseModel;
   Future<List<String>> getAllDocumentIds() async {
     final documentIds = <String>[];
     final QuerySnapshot querySnapshot =
@@ -25,13 +25,19 @@ class CustomCollectionReference<T extends BaseFirebaseModel<T>> {
         .withConverter<T>(
           fromFirestore: (snapshot, options) {
             final data = snapshot.data();
+            parseModel.id = snapshot.id;
 
-            if (data != null) return parseModel.fromJson(data);
+            if (data != null) {
+              return currentParseModel = parseModel.fromJson(data)
+                ..id = snapshot.id;
+              ;
+            }
             throw Exception('Data is null');
           },
           toFirestore: (value, options) => value.toJson(),
         )
         .get();
+
     final list = List<T>.empty(growable: true);
     for (final element in response.docs) {
       list.add(element.data());

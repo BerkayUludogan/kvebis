@@ -23,7 +23,7 @@ extension StringLocalization on String {
   bool get isValidEmails =>
       RegExp(ApplicationConstants.emailRegiex).hasMatch(this);
   bool get isValidStrings =>
-      RegExp(ApplicationConstants.stringWithoutRegiex).hasMatch(this);
+      RegExp(ApplicationConstants.stringAddressRegiex).hasMatch(this);
   bool get isValidStringWithoutRegiex =>
       RegExp(ApplicationConstants.stringWithoutRegiex).hasMatch(this);
   bool get isValidPhones =>

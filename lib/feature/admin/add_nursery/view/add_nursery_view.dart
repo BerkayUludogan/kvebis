@@ -7,11 +7,16 @@ import 'package:kvebis_app/core/extension/context_extension.dart';
 import 'package:kvebis_app/core/extension/string_extension.dart';
 import 'package:kvebis_app/core/widgets/button/base_button.dart';
 import 'package:kvebis_app/core/widgets/inputs/custom_input.dart';
+import 'package:kvebis_app/feature/admin/add_nursery/model/add_nursery.dart';
 import 'package:kvebis_app/feature/admin/add_nursery/viewmodel/add_nursery_viewmodel.dart';
 
 @RoutePage()
 class AddNurseryView extends StatelessWidget {
-  AddNurseryView({super.key});
+  AddNurseryView({
+    this.addNursery,
+    super.key,
+  });
+  final Nursery? addNursery;
   final addNurseryViewModel = AddNurseryViewModel();
   @override
   Widget build(BuildContext context) {
@@ -19,6 +24,7 @@ class AddNurseryView extends StatelessWidget {
       viewModel: addNurseryViewModel,
       onModelReady: (model) {
         model
+          ..addNursery = addNursery
           ..setContext(context)
           ..init();
       },
@@ -35,9 +41,9 @@ class AddNurseryView extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
-          title: const Text(
-            StringConstants.nurseryAdditionPanel,
-            style: TextStyle(color: Colors.white),
+          title: Text(
+            viewModel.appbarName,
+            style: const TextStyle(color: Colors.white),
           ),
           centerTitle: true,
         ),
@@ -94,9 +100,7 @@ class AddNurseryView extends StatelessWidget {
   BaseButton saveButton(AddNurseryViewModel viewModel) {
     return BaseButton(
       name: StringConstants.save,
-      onPressed: () async {
-        await viewModel.save();
-      },
+      onPressed: viewModel.onPressed!,
     );
   }
 

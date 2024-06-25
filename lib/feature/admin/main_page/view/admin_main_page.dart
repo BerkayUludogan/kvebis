@@ -49,10 +49,10 @@ class AdminMainView extends StatelessWidget {
             text: StringConstants.nurseryOperations,
           ),
           context.verticalLowSpace,
-          CustomCardButton(
+          /* CustomCardButton(
             onTap: () {},
             text: StringConstants.nurseryViewing,
-          ),
+          ), */
           context.verticalLowSpace,
           CustomCardButton(
             onTap: () {
@@ -61,10 +61,10 @@ class AdminMainView extends StatelessWidget {
             text: StringConstants.nurseryAddtion,
           ),
           context.verticalLowSpace,
-          CustomCardButton(
+          /* CustomCardButton(
             onTap: () {},
             text: StringConstants.nurseryEditing,
-          ),
+          ), */
         ],
       ),
     );

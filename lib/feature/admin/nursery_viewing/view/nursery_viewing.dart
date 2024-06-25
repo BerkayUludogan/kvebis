@@ -2,31 +2,24 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/constants/app/string_constant.dart';
 import 'package:kvebis_app/core/extension/context_extension.dart';
+import 'package:kvebis_app/core/widgets/button/base_button.dart';
+import 'package:kvebis_app/feature/admin/add_nursery/model/add_nursery.dart';
+import 'package:kvebis_app/main.dart';
+import 'package:kvebis_app/product/navigator/app_router.dart';
 
 @RoutePage()
-class NurseryViewing extends StatelessWidget {
+class NurseryViewing extends StatefulWidget {
   const NurseryViewing({
-    required this.nurseryName,
-    required this.nurseryOwnersName,
-    required this.nurseryOwnersSurname,
-    required this.nurseryOwnersPhone,
-    required this.nurseryDistrict,
-    required this.nurseryLocationProvince,
-    required this.nurseryAddress,
-    required this.monthlyFeeForNursery,
-    required this.adminID,
+    required this.nursery,
     super.key,
   });
-  final String nurseryName;
-  final String nurseryOwnersName;
-  final String nurseryOwnersSurname;
-  final String nurseryOwnersPhone;
-  final String nurseryDistrict;
-  final String nurseryLocationProvince;
-  final String nurseryAddress;
-  final String monthlyFeeForNursery;
-  final String adminID;
+  final Nursery nursery;
 
+  @override
+  State<NurseryViewing> createState() => _NurseryViewingState();
+}
+
+class _NurseryViewingState extends State<NurseryViewing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,28 +34,39 @@ class NurseryViewing extends StatelessWidget {
             children: [
               Center(
                 child: nurseryHeaderText(
-                  '$nurseryName Kreşi',
+                  '${widget.nursery.nurseryName} Kreşi',
                   fontSize: 24,
                 ),
               ),
               context.verticalMidSpace,
               nurseryHeaderText(StringConstants.ownerOfTheNursery),
-              nurseryText(nurseryOwnersName, nurseryOwnersSurname),
+              nurseryText(
+                widget.nursery.nurseryOwnersName!,
+                widget.nursery.nurseryOwnersSurname,
+              ),
               context.verticalMidSpace,
               nurseryHeaderText(StringConstants.nurseryOwnersPhone),
-              nurseryText(nurseryOwnersPhone),
+              nurseryText(widget.nursery.nurseryOwnersPhone!),
               context.verticalMidSpace,
               nurseryHeaderText(StringConstants.nurseryLocationProvince),
-              nurseryText(nurseryLocationProvince),
+              nurseryText(widget.nursery.nurseryLocationProvince!),
               context.verticalMidSpace,
               nurseryHeaderText(StringConstants.nurseryDistrict),
-              nurseryText(nurseryDistrict),
+              nurseryText(widget.nursery.nurseryDistrict!),
               context.verticalMidSpace,
               nurseryHeaderText(StringConstants.monthlyFeeForNursery),
-              nurseryText('$monthlyFeeForNursery TL'),
+              nurseryText('${widget.nursery.monthlyFeeForNursery} TL'),
               context.verticalMidSpace,
               nurseryHeaderText(StringConstants.nurseryAddress),
-              nurseryText(nurseryAddress),
+              nurseryText(widget.nursery.nurseryAddress!),
+              context.verticalMidSpace,
+              BaseButton(
+                name: StringConstants.nurseryEditing,
+                onPressed: () {
+                  getIt<AppRouter>()
+                      .push(AddNurseryRoute(addNursery: widget.nursery));
+                },
+              ),
             ],
           ),
         ),

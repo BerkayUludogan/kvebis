@@ -6,7 +6,7 @@ part of 'add_nursery.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-AddNursery _$AddNurseryFromJson(Map<String, dynamic> json) => AddNursery(
+Nursery _$NurseryFromJson(Map<String, dynamic> json) => Nursery(
       nurseryName: json['nurseryName'] as String?,
       nurseryOwnersName: json['nurseryOwnersName'] as String?,
       nurseryOwnersSurname: json['nurseryOwnersSurname'] as String?,
@@ -18,8 +18,7 @@ AddNursery _$AddNurseryFromJson(Map<String, dynamic> json) => AddNursery(
       adminID: json['adminID'] as String?,
     );
 
-Map<String, dynamic> _$AddNurseryToJson(AddNursery instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$NurseryToJson(Nursery instance) => <String, dynamic>{
       'nurseryName': instance.nurseryName,
       'nurseryOwnersName': instance.nurseryOwnersName,
       'nurseryOwnersSurname': instance.nurseryOwnersSurname,

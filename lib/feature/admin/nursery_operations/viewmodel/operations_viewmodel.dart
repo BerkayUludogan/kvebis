@@ -12,7 +12,7 @@ abstract class _OperationsViewModelBase with BaseViewModel, Store {
   GlobalKey<FormState> formState = GlobalKey();
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
   @observable
-  ObservableList<AddNursery> nursery = ObservableList<AddNursery>();
+  ObservableList<Nursery> nursery = ObservableList<Nursery>();
 
   void dispose() {}
 
@@ -31,9 +31,9 @@ abstract class _OperationsViewModelBase with BaseViewModel, Store {
   void isLoadingChange() => isLoading = !isLoading;
 
   @action
-  Future<List<AddNursery>> fetchNurserys() async {
+  Future<List<Nursery>> fetchNurserys() async {
     final fetchedNursery =
-        await FirebaseCollectionsEnum.addNursery.get(AddNursery());
+        await FirebaseCollectionsEnum.addNursery.get(Nursery());
     nursery
       ..clear()
       ..addAll(fetchedNursery);

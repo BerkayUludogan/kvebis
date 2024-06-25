@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:kvebis_app/core/base/model/base_view_model.dart';
+import 'package:kvebis_app/feature/admin/add_nursery/model/add_nursery.dart';
 import 'package:kvebis_app/feature/authenticate/login/firebase/login.dart';
 import 'package:kvebis_app/feature/authenticate/login/firebase/role.dart';
 import 'package:kvebis_app/feature/authenticate/login/model/login_model.dart';
@@ -25,7 +26,10 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   void setContext(BuildContext context) => viewModelContext = context;
 
   @override
-  void init() {}
+  void init() {
+    emailController.text = 'buludogan0@gmail.com';
+    passwordController.text = '123456';
+  }
 
   @observable
   bool isLoading = false;

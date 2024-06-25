@@ -20,7 +20,10 @@ abstract class _$AppRouter extends RootStackRouter {
           orElse: () => const AddNurseryRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: AddNurseryView(key: args.key),
+        child: AddNurseryView(
+          addNursery: args.addNursery,
+          key: args.key,
+        ),
       );
     },
     AdminMainRoute.name: (routeData) {
@@ -66,15 +69,7 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: NurseryViewing(
-          nurseryName: args.nurseryName,
-          nurseryOwnersName: args.nurseryOwnersName,
-          nurseryOwnersSurname: args.nurseryOwnersSurname,
-          nurseryOwnersPhone: args.nurseryOwnersPhone,
-          nurseryDistrict: args.nurseryDistrict,
-          nurseryLocationProvince: args.nurseryLocationProvince,
-          nurseryAddress: args.nurseryAddress,
-          monthlyFeeForNursery: args.monthlyFeeForNursery,
-          adminID: args.adminID,
+          nursery: args.nursery,
           key: args.key,
         ),
       );
@@ -106,11 +101,15 @@ abstract class _$AppRouter extends RootStackRouter {
 /// [AddNurseryView]
 class AddNurseryRoute extends PageRouteInfo<AddNurseryRouteArgs> {
   AddNurseryRoute({
+    Nursery? addNursery,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           AddNurseryRoute.name,
-          args: AddNurseryRouteArgs(key: key),
+          args: AddNurseryRouteArgs(
+            addNursery: addNursery,
+            key: key,
+          ),
           initialChildren: children,
         );
 
@@ -121,13 +120,18 @@ class AddNurseryRoute extends PageRouteInfo<AddNurseryRouteArgs> {
 }
 
 class AddNurseryRouteArgs {
-  const AddNurseryRouteArgs({this.key});
+  const AddNurseryRouteArgs({
+    this.addNursery,
+    this.key,
+  });
+
+  final Nursery? addNursery;
 
   final Key? key;
 
   @override
   String toString() {
-    return 'AddNurseryRouteArgs{key: $key}';
+    return 'AddNurseryRouteArgs{addNursery: $addNursery, key: $key}';
   }
 }
 
@@ -233,29 +237,13 @@ class NurseryAdminRoute extends PageRouteInfo<void> {
 /// [NurseryViewing]
 class NurseryRouteing extends PageRouteInfo<NurseryRouteingArgs> {
   NurseryRouteing({
-    required String nurseryName,
-    required String nurseryOwnersName,
-    required String nurseryOwnersSurname,
-    required String nurseryOwnersPhone,
-    required String nurseryDistrict,
-    required String nurseryLocationProvince,
-    required String nurseryAddress,
-    required String monthlyFeeForNursery,
-    required String adminID,
+    required Nursery nursery,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           NurseryRouteing.name,
           args: NurseryRouteingArgs(
-            nurseryName: nurseryName,
-            nurseryOwnersName: nurseryOwnersName,
-            nurseryOwnersSurname: nurseryOwnersSurname,
-            nurseryOwnersPhone: nurseryOwnersPhone,
-            nurseryDistrict: nurseryDistrict,
-            nurseryLocationProvince: nurseryLocationProvince,
-            nurseryAddress: nurseryAddress,
-            monthlyFeeForNursery: monthlyFeeForNursery,
-            adminID: adminID,
+            nursery: nursery,
             key: key,
           ),
           initialChildren: children,
@@ -269,41 +257,17 @@ class NurseryRouteing extends PageRouteInfo<NurseryRouteingArgs> {
 
 class NurseryRouteingArgs {
   const NurseryRouteingArgs({
-    required this.nurseryName,
-    required this.nurseryOwnersName,
-    required this.nurseryOwnersSurname,
-    required this.nurseryOwnersPhone,
-    required this.nurseryDistrict,
-    required this.nurseryLocationProvince,
-    required this.nurseryAddress,
-    required this.monthlyFeeForNursery,
-    required this.adminID,
+    required this.nursery,
     this.key,
   });
 
-  final String nurseryName;
-
-  final String nurseryOwnersName;
-
-  final String nurseryOwnersSurname;
-
-  final String nurseryOwnersPhone;
-
-  final String nurseryDistrict;
-
-  final String nurseryLocationProvince;
-
-  final String nurseryAddress;
-
-  final String monthlyFeeForNursery;
-
-  final String adminID;
+  final Nursery nursery;
 
   final Key? key;
 
   @override
   String toString() {
-    return 'NurseryRouteingArgs{nurseryName: $nurseryName, nurseryOwnersName: $nurseryOwnersName, nurseryOwnersSurname: $nurseryOwnersSurname, nurseryOwnersPhone: $nurseryOwnersPhone, nurseryDistrict: $nurseryDistrict, nurseryLocationProvince: $nurseryLocationProvince, nurseryAddress: $nurseryAddress, monthlyFeeForNursery: $monthlyFeeForNursery, adminID: $adminID, key: $key}';
+    return 'NurseryRouteingArgs{nursery: $nursery, key: $key}';
   }
 }
 

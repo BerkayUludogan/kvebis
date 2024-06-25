@@ -3,8 +3,9 @@ import 'package:kvebis_app/product/utility/exception/base/base_firebase_model.da
 part 'add_nursery.g.dart';
 
 @JsonSerializable()
-class AddNursery extends BaseFirebaseModel<AddNursery> {
-  AddNursery({
+class Nursery extends BaseFirebaseModel<Nursery> {
+  Nursery({
+    this.id,
     this.nurseryName,
     this.nurseryOwnersName,
     this.nurseryOwnersSurname,
@@ -15,7 +16,7 @@ class AddNursery extends BaseFirebaseModel<AddNursery> {
     this.monthlyFeeForNursery,
     this.adminID,
   });
-
+  String? id;
   String? nurseryName;
   String? nurseryOwnersName;
   String? nurseryOwnersSurname;
@@ -27,8 +28,8 @@ class AddNursery extends BaseFirebaseModel<AddNursery> {
   String? adminID;
 
   @override
-  Map<String, dynamic> toJson() => _$AddNurseryToJson(this);
+  Map<String, dynamic> toJson() => _$NurseryToJson(this);
 
   @override
-  AddNursery fromJson(Map<String, dynamic> json) => _$AddNurseryFromJson(json);
+  Nursery fromJson(Map<String, dynamic> json) => _$NurseryFromJson(json);
 }

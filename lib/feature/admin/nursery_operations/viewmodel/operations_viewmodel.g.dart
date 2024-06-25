@@ -13,13 +13,13 @@ mixin _$OperationsViewModel on _OperationsViewModelBase, Store {
       Atom(name: '_OperationsViewModelBase.nursery', context: context);
 
   @override
-  ObservableList<AddNursery> get nursery {
+  ObservableList<Nursery> get nursery {
     _$nurseryAtom.reportRead();
     return super.nursery;
   }
 
   @override
-  set nursery(ObservableList<AddNursery> value) {
+  set nursery(ObservableList<Nursery> value) {
     _$nurseryAtom.reportWrite(value, super.nursery, () {
       super.nursery = value;
     });
@@ -45,7 +45,7 @@ mixin _$OperationsViewModel on _OperationsViewModelBase, Store {
       AsyncAction('_OperationsViewModelBase.fetchNurserys', context: context);
 
   @override
-  Future<List<AddNursery>> fetchNurserys() {
+  Future<List<Nursery>> fetchNurserys() {
     return _$fetchNurserysAsyncAction.run(() => super.fetchNurserys());
   }
 
@@ -55,7 +55,8 @@ mixin _$OperationsViewModel on _OperationsViewModelBase, Store {
   @override
   void isLoadingChange() {
     final _$actionInfo = _$_OperationsViewModelBaseActionController.startAction(
-        name: '_OperationsViewModelBase.isLoadingChange');
+      name: '_OperationsViewModelBase.isLoadingChange',
+    );
     try {
       return super.isLoadingChange();
     } finally {
